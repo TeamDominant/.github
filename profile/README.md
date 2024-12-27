@@ -3,6 +3,7 @@
 <h6 align="center">💎 Dominant was originally created as gaming group and later grown to group of enthusiasts in different areas.</div>
 
 ---
+
 > [!IMPORTANT]
 > **Amdcloud** is __not affiliated__ with or endorsed by **Advanced Micro Devices, Inc**. \
 > **Amdcloud** means __Adaptive Multi-Device Cloud__. Thanks for understanding.
