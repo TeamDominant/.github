@@ -9,6 +9,9 @@
 > **Amdcloud** means __Adaptive Multi-Device Cloud__. Thanks for understanding.
 
 ---
-<img src="https://github.com/TeamDominant/.github/blob/main/amdcloud-high-resolution-logo-grayscale-transparent1.png" class="center"> 
+
+<p align="center">
+  <img src="https://github.com/TeamDominant/.github/blob/main/jaba.png?raw=true" width="300">
+</p>
 
 <h3 align="center">Exploring is good for your future and making your life easier with skills you will learn.</h3
