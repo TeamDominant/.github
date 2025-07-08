@@ -11,7 +11,7 @@
 ---
 
 <p align="center">
-  <img src="https://github.com/TeamDominant/.github/blob/main/jaba4-3.png?raw=true" width="300">
+  <img src="https://github.com/TeamDominant/.github/blob/main/jaba-4-3.png?raw=true" width="300">
 </p>
 
 <h3 align="center">Exploring is good for your future and making your life easier with skills you will learn.</h3
