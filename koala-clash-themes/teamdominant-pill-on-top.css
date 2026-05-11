@@ -807,7 +807,7 @@ div[role='button'][aria-selected][aria-busy]:not([data-slot='card']) .border-t {
 .dark,
 [data-theme='light'],
 [data-theme='dark'] {
-  --teamdominant-header-pill-text: 'ДАЙТЕ ДЕНЯГ';
+  --teamdominant-header-pill-text: 'Не используйте Happ 🙏';
   --teamdominant-header-pill-speed: 4.8s;
   --teamdominant-header-pill-ring: rgb(255 128 128 / 58%);
   --teamdominant-header-pill-glow: rgb(255 128 128 / 24%);
