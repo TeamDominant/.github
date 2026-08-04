@@ -1,7 +1,5 @@
 /* TeamDominant (Minimal) */
 
-
-
 /* 1. Скрытие карты для всех тем */
 img.pointer-events-none {
   display: none !important;
@@ -11,7 +9,7 @@ img.pointer-events-none {
    2. СВЕТЛАЯ ТЕМА
    ========================================= */
 html:not(.dark) {
-  --card: #e2e2e2 !important;
+  --card: #ffffff !important;
   --border: #cbd5e1 !important;
   --foreground: #0f172a !important;
   --muted-foreground: #475569 !important;
@@ -20,7 +18,7 @@ html:not(.dark) {
   --primary: #10b981 !important; 
   
   --success: #2563eb !important;
-  --success-foreground: #e2e2e2 !important;
+  --success-foreground: #ffffff !important;
   
   --stroke-power-on: #059669 !important;
   --gradient-start-power-on: #10b981 !important;
@@ -30,12 +28,12 @@ html:not(.dark) {
   --gradient-start-power-off: #be123c !important;
   --gradient-end-power-off: #881337 !important;
   
-  --popover: #e2e2e2 !important;
+  --popover: #ffffff !important;
 }
 
 /* Фон светлой темы */
 html:not(.dark) .relative.w-full.h-screen {
-  background: #e2e2e2 !important;
+  background: #d5d5d5 !important;
 }
 
 /* Обычные карточки светлой темы */
@@ -44,7 +42,7 @@ html:not(.dark) [data-slot="card"],
 html:not(.dark) .driver-popover {
   background-color: var(--card) !important;
   border-color: var(--border) !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
 }
 
 /* Выделение селектора в группе */
@@ -63,7 +61,7 @@ html:not(.dark) [data-slot="card"][class*="bg-primary"] * {
 html:not(.dark) button[role="combobox"],
 html:not(.dark) select,
 html:not(.dark) [data-slot="select-trigger"] {
-  background-color: #e2e2e2 !important;
+  background-color: #ffffff !important;
   border: 1px solid #cbd5e1 !important;
   color: #0f172a !important;
   opacity: 1 !important;
