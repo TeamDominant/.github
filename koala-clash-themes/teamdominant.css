@@ -19,7 +19,7 @@ html:not(.dark) {
   --input: #cbd5e1 !important; 
   --primary: #10b981 !important; 
   
-  --success: #eb2556 !important;
+  --success: #2563eb !important;
   --success-foreground: #ffffff !important;
   
   --stroke-power-on: #059669 !important;
@@ -52,11 +52,11 @@ html:not(.dark) [data-slot="card"].border-primary,
 html:not(.dark) [data-slot="card"][class*="bg-primary"],
 html:not(.dark) [class*="proxy-card"][class*="active"] {
   background-color: #e0f2fe !important; 
-  border-color: #eb2556 !important;     
+  border-color: #2563eb !important;     
 }
 html:not(.dark) [data-slot="card"].border-primary *,
 html:not(.dark) [data-slot="card"][class*="bg-primary"] * {
-  color: #eb2556 !important;             
+  color: #2563eb !important;             
 }
 
 /* Прозрачные выпадающие поля */
@@ -91,13 +91,13 @@ html.dark {
   --border: #1e2532 !important;
   --foreground: #ffffff !important;
   --muted-foreground: #94a3b8 !important;
-  --primary: #f63b6a !important;
+  --primary: #3b82f6 !important;
   
-  --success: #f63b6a !important;
+  --success: #3b82f6 !important;
   --success-foreground: #ffffff !important;
   
   --stroke-power-on: #60a5fa !important;
-  --gradient-start-power-on: #f63b6a !important;
+  --gradient-start-power-on: #3b82f6 !important;
   --gradient-end-power-on: #1d4ed8 !important;
   
   --stroke-power-off: #881337 !important;
@@ -126,11 +126,11 @@ html.dark [data-slot="card"].border-primary,
 html.dark [data-slot="card"][class*="bg-primary"],
 html.dark [class*="proxy-card"][class*="active"] {
   background-color: #1e293b !important; 
-  border-color: #f63b6a !important;     
+  border-color: #3b82f6 !important;     
 }
 html.dark [data-slot="card"].border-primary *,
 html.dark [data-slot="card"][class*="bg-primary"] * {
-  color: #f63b6a !important;             
+  color: #3b82f6 !important;             
 }
 
 /* Поля выбора в темной теме */
@@ -147,5 +147,5 @@ html.dark button[role="switch"][data-state="unchecked"] {
   background-color: #1e2532 !important;
 }
 html.dark button[role="switch"][data-state="checked"] {
-  background-color: #f63b6a !important;
+  background-color: #3b82f6 !important;
 }
