@@ -11,7 +11,7 @@ img.pointer-events-none {
    2. СВЕТЛАЯ ТЕМА
    ========================================= */
 html:not(.dark) {
-  --card: #ffffff !important;
+  --card: #e2e2e2 !important;
   --border: #cbd5e1 !important;
   --foreground: #0f172a !important;
   --muted-foreground: #475569 !important;
@@ -20,7 +20,7 @@ html:not(.dark) {
   --primary: #10b981 !important; 
   
   --success: #2563eb !important;
-  --success-foreground: #ffffff !important;
+  --success-foreground: #e2e2e2 !important;
   
   --stroke-power-on: #059669 !important;
   --gradient-start-power-on: #10b981 !important;
@@ -30,12 +30,12 @@ html:not(.dark) {
   --gradient-start-power-off: #be123c !important;
   --gradient-end-power-off: #881337 !important;
   
-  --popover: #ffffff !important;
+  --popover: #e2e2e2 !important;
 }
 
 /* Фон светлой темы */
 html:not(.dark) .relative.w-full.h-screen {
-  background: #e2e8f0 !important;
+  background: #e2e2e2 !important;
 }
 
 /* Обычные карточки светлой темы */
@@ -63,7 +63,7 @@ html:not(.dark) [data-slot="card"][class*="bg-primary"] * {
 html:not(.dark) button[role="combobox"],
 html:not(.dark) select,
 html:not(.dark) [data-slot="select-trigger"] {
-  background-color: #ffffff !important;
+  background-color: #e2e2e2 !important;
   border: 1px solid #cbd5e1 !important;
   color: #0f172a !important;
   opacity: 1 !important;
