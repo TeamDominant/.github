@@ -1,149 +1,111 @@
 /* TeamDominant (Minimal) */
 
-/* 1. Скрытие карты для всех тем */
+html:not(.dark) {
+  --card: #ffffff !important;
+  --border: #d6d4d0 !important;
+  --foreground: #211f1c !important;
+  --muted-foreground: #6b6964 !important;
+  --input: #d6d4d0 !important;
+  --stroke: #d6d4d0 !important;
+  --accent: #f1f0ec !important;
+  --profile-active: #ffeaf0 !important;
+  --stroke-profile-active: #cf2677 !important;
+  --profile-inactive: rgba(255, 255, 255, 0.5) !important;
+  --stroke-profile-inactive: #d6d4d0 !important;
+  --primary: #cf2677 !important;
+  --success: #cf2677 !important;
+  --stroke-power-on: #ba1768 !important;
+  --gradient-start-power-on: #e14589 !important;
+  --gradient-end-power-on: #a2135a !important;
+  --stroke-power-off: #171613 !important;
+  --gradient-start-power-off: #3e3d3a !important;
+  --gradient-end-power-off: #171613 !important;
+  --koala-custom-background: #f7f6f3;
+  --koala-custom-card-shadow: 0 4px 12px rgba(23, 22, 19, 0.08);
+  --koala-custom-selected-background: #ffeaf0;
+}
+
+html.dark {
+  --card: #201f1d !important;
+  --border: #31302e !important;
+  --foreground: #f1f0ed !important;
+  --muted-foreground: #a7a49f !important;
+  --stroke: #41403d !important;
+  --accent: #2b2a27 !important;
+  --profile-active: #491d2e !important;
+  --stroke-profile-active: #e14589 !important;
+  --profile-inactive: rgba(32, 31, 29, 0.5) !important;
+  --stroke-profile-inactive: #41403d !important;
+  --primary: #e14589 !important;
+  --success: #e14589 !important;
+  --stroke-power-on: #f175a4 !important;
+  --gradient-start-power-on: #e14589 !important;
+  --gradient-end-power-on: #af1863 !important;
+  --stroke-power-off: #565553 !important;
+  --gradient-start-power-off: #434240 !important;
+  --gradient-end-power-off: #272624 !important;
+  --koala-custom-background: linear-gradient(to bottom, #2f1a21 0%, #181715 5%, #181715 100%);
+  --koala-custom-card-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  --koala-custom-selected-background: #491d2e;
+}
+
+html:is(.dark, :not(.dark)) {
+  --success-foreground: #ffffff !important;
+  --popover: var(--card) !important;
+}
+
 img.pointer-events-none {
   display: none !important;
 }
 
-/* =========================================
-   2. СВЕТЛАЯ ТЕМА
-   ========================================= */
-html:not(.dark) {
-  --card: #ffffff !important;
-  --border: #cbd5e1 !important;
-  --foreground: #0f172a !important;
-  --muted-foreground: #475569 !important;
-  
-  --input: #cbd5e1 !important; 
-  --primary: #10b981 !important; 
-  
-  --success: #2563eb !important;
-  --success-foreground: #ffffff !important;
-  
-  --stroke-power-on: #059669 !important;
-  --gradient-start-power-on: #10b981 !important;
-  --gradient-end-power-on: #047857 !important;
-  
-  --stroke-power-off: #9f1239 !important;
-  --gradient-start-power-off: #be123c !important;
-  --gradient-end-power-off: #881337 !important;
-  
-  --popover: #ffffff !important;
+html:is(.dark, :not(.dark)) .relative.w-full.h-screen {
+  background: var(--koala-custom-background) !important;
 }
 
-/* Фон светлой темы */
-html:not(.dark) .relative.w-full.h-screen {
-  background: #d5d5d5 !important;
-}
-
-/* Обычные карточки светлой темы */
-html:not(.dark) .bg-card, 
-html:not(.dark) [data-slot="card"], 
-html:not(.dark) .driver-popover {
+html:is(.dark, :not(.dark)) :is(.bg-card, [data-slot="card"], .driver-popover) {
   background-color: var(--card) !important;
   border-color: var(--border) !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  box-shadow: var(--koala-custom-card-shadow) !important;
 }
 
-/* Выделение селектора в группе */
-html:not(.dark) [data-slot="card"].border-primary,
-html:not(.dark) [data-slot="card"][class*="bg-primary"],
-html:not(.dark) [class*="proxy-card"][class*="active"] {
-  background-color: #e0f2fe !important; 
-  border-color: #2563eb !important;     
-}
-html:not(.dark) [data-slot="card"].border-primary *,
-html:not(.dark) [data-slot="card"][class*="bg-primary"] * {
-  color: #2563eb !important;             
+html:is(.dark, :not(.dark)) [data-slot="card"]:is(.border-primary, [class*="bg-primary"]) {
+  background-color: var(--koala-custom-selected-background) !important;
+  border-color: var(--success) !important;
 }
 
-/* Прозрачные выпадающие поля */
+html:is(.dark, :not(.dark)) [data-slot="card"]:is(.border-primary, [class*="bg-primary"]) * {
+  color: var(--success) !important;
+}
+
+html:is(.dark, :not(.dark)) button[role="combobox"],
+html:is(.dark, :not(.dark)) select,
+html:is(.dark, :not(.dark)) [data-slot="select-trigger"] {
+  background-color: var(--card) !important;
+  border: 1px solid var(--border) !important;
+  color: var(--foreground) !important;
+}
+
 html:not(.dark) button[role="combobox"],
 html:not(.dark) select,
 html:not(.dark) [data-slot="select-trigger"] {
-  background-color: #ffffff !important;
-  border: 1px solid #cbd5e1 !important;
-  color: #0f172a !important;
   opacity: 1 !important;
 }
 
-/* Цвет текста */
 html:not(.dark) body,
 html:not(.dark) .text-primary {
-  color: #0f172a !important;
+  color: var(--foreground) !important;
 }
 
-/* Тоглы (Светлая тема) */
-html:not(.dark) button[role="switch"][data-state="unchecked"] {
-  background-color: #cbd5e1 !important;
-}
-html:not(.dark) button[role="switch"][data-state="checked"] {
-  background-color: #10b981 !important;
+html:is(.dark, :not(.dark)) button[role="switch"][data-state="unchecked"] {
+  background-color: var(--border) !important;
 }
 
-/* =========================================
-   3. ТЕМНАЯ ТЕМА
-   ========================================= */
-html.dark {
-  --card: #12151c !important;
-  --border: #1e2532 !important;
-  --foreground: #ffffff !important;
-  --muted-foreground: #94a3b8 !important;
-  --primary: #3b82f6 !important;
-  
-  --success: #3b82f6 !important;
-  --success-foreground: #ffffff !important;
-  
-  --stroke-power-on: #60a5fa !important;
-  --gradient-start-power-on: #3b82f6 !important;
-  --gradient-end-power-on: #1d4ed8 !important;
-  
-  --stroke-power-off: #881337 !important;
-  --gradient-start-power-off: #9f1239 !important;
-  --gradient-end-power-off: #4c0519 !important;
-  
-  --popover: #12151c !important;
+html:is(.dark, :not(.dark)) button[role="switch"][data-state="checked"] {
+  background-color: var(--primary) !important;
 }
 
-/* Фон темной темы */
-html.dark .relative.w-full.h-screen {
-  background: linear-gradient(to bottom, #141f2e 0%, #090d14 10%, #090d14 100%) !important;
-}
-
-/* Обычные карточки темной темы */
-html.dark .bg-card, 
-html.dark [data-slot="card"], 
-html.dark .driver-popover {
-  background-color: var(--card) !important;
-  border-color: var(--border) !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
-}
-
-/* Выделение селектора в группе) */
-html.dark [data-slot="card"].border-primary,
-html.dark [data-slot="card"][class*="bg-primary"],
-html.dark [class*="proxy-card"][class*="active"] {
-  background-color: #1e293b !important; 
-  border-color: #3b82f6 !important;     
-}
-html.dark [data-slot="card"].border-primary *,
-html.dark [data-slot="card"][class*="bg-primary"] * {
-  color: #3b82f6 !important;             
-}
-
-/* Поля выбора в темной теме */
-html.dark button[role="combobox"],
-html.dark select,
-html.dark [data-slot="select-trigger"] {
-  background-color: #12151c !important;
-  border: 1px solid #1e2532 !important;
-  color: #ffffff !important;
-}
-
-/* Тоглы (Темная тема) */
-html.dark button[role="switch"][data-state="unchecked"] {
-  background-color: #1e2532 !important;
-}
-html.dark button[role="switch"][data-state="checked"] {
-  background-color: #3b82f6 !important;
+html:is(.dark, :not(.dark)) [data-sidebar="menu-button"][data-active="true"] {
+  background-color: var(--koala-custom-selected-background) !important;
+  color: var(--primary) !important;
+  --tw-ring-color: var(--primary) !important;
 }
