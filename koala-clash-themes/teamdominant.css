@@ -1,94 +1,110 @@
-/* TeamDominant (Minimal) */
+/* TeamDominant */
+
+/* Шрифты сайта. @import работает, только если стоит первой строкой; без сети останется системный шрифт */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=Manrope:wght@500..800&display=swap");
+
+/* ── Светлая тема ─────────────────────────────────────────────── */
 
 html:not(.dark) {
+  --td-ink: #171613;          /* самый тёмный тон: обводка стикеров */
+  --td-surface: #f7f6f3;      /* фон приложения */
+  --td-brand: #cf2677;
+  --td-brand-soft: #ffeaf0;
+  --td-shadow-hard: #171613;  /* жёсткая тень стикера */
+  --td-control: #d6d4d0;      /* рамки полей, выключенные переключатели */
+  --td-power-off: #171613;
+  --td-power-off-stroke: #171613;
+
   --card: #ffffff !important;
-  --border: #d6d4d0 !important;
   --foreground: #211f1c !important;
+  --muted: #f3f2ef !important;
+  --secondary: #f3f2ef !important;
   --muted-foreground: #6b6964 !important;
-  --input: #d6d4d0 !important;
-  --stroke: #d6d4d0 !important;
   --accent: #f1f0ec !important;
-  --profile-active: #ffeaf0 !important;
-  --stroke-profile-active: #cf2677 !important;
+  --border: #e4e3df !important;
+  --ring: #cf277799 !important;
   --profile-inactive: rgba(255, 255, 255, 0.5) !important;
-  --stroke-profile-inactive: #d6d4d0 !important;
-  --primary: #cf2677 !important;
-  --success: #cf2677 !important;
-  --stroke-power-on: #ba1768 !important;
-  --gradient-start-power-on: #e14589 !important;
-  --gradient-end-power-on: #a2135a !important;
-  --stroke-power-off: #171613 !important;
-  --gradient-start-power-off: #3e3d3a !important;
-  --gradient-end-power-off: #171613 !important;
-  --koala-custom-background: #f7f6f3;
-  --koala-custom-card-shadow: 0 4px 12px rgba(23, 22, 19, 0.08);
-  --koala-custom-selected-background: #ffeaf0;
 }
+
+/* ── Тёмная тема: ink становится самым светлым тоном ────────────── */
 
 html.dark {
+  --td-ink: #f1f0ed;
+  --td-surface: #181715;
+  --td-brand: #e14589;
+  --td-brand-soft: #491d2e;
+  --td-shadow-hard: #020201;
+  --td-control: #41403d;
+  --td-power-off: #282725;
+  --td-power-off-stroke: #41403d;
+
   --card: #201f1d !important;
-  --border: #31302e !important;
-  --foreground: #f1f0ed !important;
+  --foreground: #dfdeda !important;
+  --muted: #282725 !important;
+  --secondary: #282725 !important;
   --muted-foreground: #a7a49f !important;
-  --stroke: #41403d !important;
   --accent: #2b2a27 !important;
-  --profile-active: #491d2e !important;
-  --stroke-profile-active: #e14589 !important;
+  --border: #31302e !important;
+  --ring: #e1458999 !important;
   --profile-inactive: rgba(32, 31, 29, 0.5) !important;
-  --stroke-profile-inactive: #41403d !important;
-  --primary: #e14589 !important;
-  --success: #e14589 !important;
-  --stroke-power-on: #f175a4 !important;
-  --gradient-start-power-on: #e14589 !important;
-  --gradient-end-power-on: #af1863 !important;
-  --stroke-power-off: #565553 !important;
-  --gradient-start-power-off: #434240 !important;
-  --gradient-end-power-off: #272624 !important;
-  --koala-custom-background: linear-gradient(to bottom, #2f1a21 0%, #181715 5%, #181715 100%);
-  --koala-custom-card-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-  --koala-custom-selected-background: #491d2e;
 }
+
+/* ── Общие переменные ─────────────────────────────────────────── */
 
 html:is(.dark, :not(.dark)) {
-  --success-foreground: #ffffff !important;
+  --td-font-text: "Inter", "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --td-font-heading: "Manrope", "Manrope Variable", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--td-font-text) !important;
+
+  /* стикеры: обводка ink + жёсткая тень; sm — кнопки и пункты меню, md — карточки, lg — окна */
+  --td-sticker-sm: 0 0 0 2px var(--td-ink), 2px 3px 0 2px var(--td-shadow-hard);
+  --td-sticker-md: 0 0 0 1px var(--td-ink), 3px 4px 0 1px var(--td-shadow-hard);
+  --td-sticker-lg: 0 0 0 1px var(--td-ink), 5px 7px 0 1px var(--td-shadow-hard);
+
+  /* точки гаснут к низу, как в hero сайта; none — точки на весь экран */
+  --td-dots-fade: linear-gradient(to bottom, transparent, var(--td-surface) 85%);
+
+  --radius: 0.875rem !important;
   --popover: var(--card) !important;
+  --input: var(--td-control) !important;
+  --stroke: var(--td-control) !important;
+
+  --primary: var(--td-brand) !important;
+  --primary-foreground: #ffffff !important;
+  --success: var(--td-brand) !important;
+  --success-foreground: #ffffff !important;
+
+  /* выбранный профиль — розовая подложка в обводке ink */
+  --profile-active: var(--td-brand-soft) !important;
+  --stroke-profile-active: var(--td-ink) !important;
+  --stroke-profile-inactive: var(--td-control) !important;
+
+  /* кнопка питания плоская, как кнопки на сайте: начало и конец градиента совпадают */
+  --gradient-start-power-on: var(--td-brand) !important;
+  --gradient-end-power-on: var(--td-brand) !important;
+  --stroke-power-on: var(--td-ink) !important;
+  --gradient-start-power-off: var(--td-power-off) !important;
+  --gradient-end-power-off: var(--td-power-off) !important;
+  --stroke-power-off: var(--td-power-off-stroke) !important;
 }
 
-img.pointer-events-none {
-  display: none !important;
-}
+/* ── Фон из точек и типографика ───────────────────────────────── */
 
 html:is(.dark, :not(.dark)) .relative.w-full.h-screen {
-  background: var(--koala-custom-background) !important;
+  background:
+    var(--td-dots-fade),
+    radial-gradient(var(--border) 1.2px, transparent 1.2px) 0 0 / 22px 22px,
+    var(--td-surface) !important;
 }
 
-html:is(.dark, :not(.dark)) :is(.bg-card, [data-slot="card"], .driver-popover) {
-  background-color: var(--card) !important;
-  border-color: var(--border) !important;
-  box-shadow: var(--koala-custom-card-shadow) !important;
+html:is(.dark, :not(.dark)) body {
+  font-family: var(--td-font-text);
+  font-feature-settings: "cv11", "ss01";
+  -webkit-font-smoothing: antialiased;
 }
 
-html:is(.dark, :not(.dark)) [data-slot="card"]:is(.border-primary, [class*="bg-primary"]) {
-  background-color: var(--koala-custom-selected-background) !important;
-  border-color: var(--success) !important;
-}
-
-html:is(.dark, :not(.dark)) [data-slot="card"]:is(.border-primary, [class*="bg-primary"]) * {
-  color: var(--success) !important;
-}
-
-html:is(.dark, :not(.dark)) button[role="combobox"],
-html:is(.dark, :not(.dark)) select,
-html:is(.dark, :not(.dark)) [data-slot="select-trigger"] {
-  background-color: var(--card) !important;
-  border: 1px solid var(--border) !important;
-  color: var(--foreground) !important;
-}
-
-html:not(.dark) button[role="combobox"],
-html:not(.dark) select,
-html:not(.dark) [data-slot="select-trigger"] {
-  opacity: 1 !important;
+html:is(.dark, :not(.dark)) :is(h1, h2, h3, h4, [data-slot$="-title"]) {
+  font-family: var(--td-font-heading);
 }
 
 html:not(.dark) body,
@@ -96,16 +112,112 @@ html:not(.dark) .text-primary {
   color: var(--foreground) !important;
 }
 
+::selection {
+  background-color: var(--td-brand-soft);
+  color: var(--td-ink);
+}
+
+img.pointer-events-none {
+  display: none !important;
+}
+
+/* ── Карточки ─────────────────────────────────────────────────── */
+
+/* обычные — плоские: тонкая рамка, без тени */
+html:is(.dark, :not(.dark)) :is(.bg-card, [data-slot="card"]) {
+  background-color: var(--card) !important;
+  border-color: var(--border) !important;
+  box-shadow: none !important;
+}
+
+/* выбранная — стикер на розовой подложке */
+html:is(.dark, :not(.dark)) [data-slot="card"]:is(.border-primary, [class*="bg-primary"]) {
+  background-color: var(--td-brand-soft) !important;
+  border-color: var(--td-ink) !important;
+  box-shadow: var(--td-sticker-md) !important;
+}
+
+html:is(.dark, :not(.dark)) [data-slot="card"]:is(.border-primary, [class*="bg-primary"]) * {
+  color: var(--td-ink) !important;
+}
+
+html:is(.dark, :not(.dark)) [data-slot="card"]:is(.border-primary, [class*="bg-primary"]) .text-muted-foreground {
+  color: var(--muted-foreground) !important;
+}
+
+html:is(.dark, :not(.dark)) [data-slot="card"]:is(.border-primary, [class*="bg-primary"]) :is(svg, svg *) {
+  color: var(--td-brand) !important;
+}
+
+/* ── Всплывающее: меню, диалоги, подсказки онбординга ─────────── */
+
+html:is(.dark, :not(.dark)) :is(
+  [data-slot="popover-content"],
+  [data-slot="dropdown-menu-content"],
+  [data-slot="select-content"],
+  [data-slot="context-menu-content"]
+) {
+  background-color: var(--card) !important;
+  border-color: var(--td-ink) !important;
+  box-shadow: var(--td-sticker-md) !important;
+}
+
+html:is(.dark, :not(.dark)) :is(.driver-popover, [data-slot="dialog-content"]) {
+  background-color: var(--card) !important;
+  border: 1px solid var(--td-ink) !important;
+  box-shadow: var(--td-sticker-lg) !important;
+}
+
+/* ── Кнопки — пилюли, как на сайте (кроме склеенных в группу) ── */
+
+html:is(.dark, :not(.dark)) [data-slot="button"]:not([class*="rounded-none"], [class*="rounded-l-none"], [class*="rounded-r-none"]) {
+  border-radius: 9999px !important;
+}
+
+/* основная кнопка — стикер, при нажатии «вдавливается» в тень */
+html:is(.dark, :not(.dark)) [data-slot="button"].bg-primary {
+  box-shadow: var(--td-sticker-sm) !important;
+}
+
+html:is(.dark, :not(.dark)) [data-slot="button"].bg-primary:active:not(:disabled) {
+  transform: translate(1px, 2px);
+  box-shadow: 0 0 0 2px var(--td-ink), 1px 1px 0 2px var(--td-shadow-hard) !important;
+}
+
+/* ── Поля и переключатели ─────────────────────────────────────── */
+
+html:is(.dark, :not(.dark)) :is(button[role="combobox"], select, [data-slot="select-trigger"]) {
+  background-color: var(--card) !important;
+  border: 1px solid var(--td-control) !important;
+  color: var(--foreground) !important;
+}
+
+html:is(.dark, :not(.dark)) :is(button[role="combobox"], [data-slot="select-trigger"])[data-state="open"] {
+  border-color: var(--td-ink) !important;
+}
+
+html:not(.dark) :is(button[role="combobox"], select, [data-slot="select-trigger"]) {
+  opacity: 1 !important;
+}
+
 html:is(.dark, :not(.dark)) button[role="switch"][data-state="unchecked"] {
-  background-color: var(--border) !important;
+  background-color: var(--td-control) !important;
 }
 
 html:is(.dark, :not(.dark)) button[role="switch"][data-state="checked"] {
-  background-color: var(--primary) !important;
+  background-color: var(--td-brand) !important;
+  box-shadow: 0 0 0 1.5px var(--td-ink) !important;
 }
 
+/* ── Боковое меню: активный пункт — стикер, как выбранная карточка ── */
+
 html:is(.dark, :not(.dark)) [data-sidebar="menu-button"][data-active="true"] {
-  background-color: var(--koala-custom-selected-background) !important;
-  color: var(--primary) !important;
-  --tw-ring-color: var(--primary) !important;
+  background-color: var(--td-brand-soft) !important;
+  color: var(--td-ink) !important;
+  box-shadow: var(--td-sticker-sm) !important;
+  --tw-ring-color: var(--td-ink) !important;
+}
+
+html:is(.dark, :not(.dark)) [data-sidebar="menu-button"][data-active="true"] :is(svg, svg *) {
+  color: var(--td-brand) !important;
 }
